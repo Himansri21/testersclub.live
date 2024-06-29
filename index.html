@@ -12,6 +12,10 @@
         ws = new WebSocket(`${proto}://${window.location.host}`);
 
         ws.onmessage = (event) => {console.log(event.data)};
+
+        ws.onerror = (error) => {
+            console.error('WebSocket error:', error);
+        };
     </script>
 </body>
 </html> 
